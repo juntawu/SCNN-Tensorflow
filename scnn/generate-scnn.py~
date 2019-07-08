@@ -1,0 +1,32 @@
+# -*-coding:utf-8-*-
+import tensorflow as tf
+import tensorflow.contrib.slim as slim
+
+def create_scnn(features):
+    with tf.name_scope("SCNN_D") as scope:
+        with slim.arg_scope([slim.conv2d], weights_regularizer=slim.l2_regularizer(weight_decay), weights_initializer=tf.truncated_normal_initializer(stddev=0.01), reuse=reuse):
+         
+            # features 欲进行处理的特征层
+            if is_training is True:
+                batch_size = features.shape.as_list()[0]  # batch 大小
+            else:
+                batch_size = 1
+                
+            slice_d = []
+            
+            # 特征图的高度为 features.shape.as_list()[1]
+            for i in range(features.shape.as_list()[1]): #SCNN_D
+                j = i + 1 # 下一个 slice
+                slice_d.append( tf.strided_slice(features, [0,i,0,0], [batch_size, j, features.shape.as_list()[2], features.shape.as_list()[3]], strides=[1,1,1,1]) ) 
+            
+            
+            ## slice_d 中元素的维度都是[B * W * C]
+            slice_sum = slice_d[0]
+            slice_concat = [slice_d[0]]
+             
+            for i in range(features.shape.as_list()[1]-1):
+                slice_sum = slim.conv2d(slice_sum, features.shape.as_list()[3], kernel_size=[1,9], reuse = tf.AUTO_REUSE, rate=1, activation_fn=tf.nn.relu, normalizer_fn=None, scope='spatial_conv') + slice_d[i+1]
+                slice_concat.append(slice_sum)
+
+            features = tf.concat(slice_concat, 1)
+            return features

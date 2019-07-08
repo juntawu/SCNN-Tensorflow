@@ -1,0 +1,39 @@
+WARNING:tensorflow:From /home/BackUp/home/wjt/my_work/scnn-tensorflow/scnn/create_model/scnn_model.py:281: calling softmax (from tensorflow.python.ops.nn_ops) with dim is deprecated and will be removed in a future version.
+Instructions for updating:
+dim is deprecated, use axis instead
+WARNING:tensorflow:From /home/BackUp/home/wjt/my_work/scnn-tensorflow/scnn/create_model/scnn_model.py:353: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See @{tf.nn.softmax_cross_entropy_with_logits_v2}.
+
+2019-01-08 11:25:26.011146: I tensorflow/core/platform/cpu_feature_guard.cc:140] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2019-01-08 11:25:26.412625: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1356] Found device 0 with properties: 
+name: GeForce GTX 1080 major: 6 minor: 1 memoryClockRate(GHz): 1.7335
+pciBusID: 0000:83:00.0
+totalMemory: 7.93GiB freeMemory: 7.81GiB
+2019-01-08 11:25:26.684098: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1356] Found device 1 with properties: 
+name: GeForce GTX 1080 major: 6 minor: 1 memoryClockRate(GHz): 1.7335
+pciBusID: 0000:84:00.0
+totalMemory: 7.93GiB freeMemory: 7.81GiB
+2019-01-08 11:25:26.970525: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1356] Found device 2 with properties: 
+name: GeForce GTX 1080 major: 6 minor: 1 memoryClockRate(GHz): 1.7335
+pciBusID: 0000:87:00.0
+totalMemory: 7.93GiB freeMemory: 7.81GiB
+2019-01-08 11:25:27.256278: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1356] Found device 3 with properties: 
+name: GeForce GTX 1080 major: 6 minor: 1 memoryClockRate(GHz): 1.7335
+pciBusID: 0000:88:00.0
+totalMemory: 7.93GiB freeMemory: 7.81GiB
+2019-01-08 11:25:27.264326: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1435] Adding visible gpu devices: 0, 1, 2, 3
+2019-01-08 11:25:28.399290: I tensorflow/core/common_runtime/gpu/gpu_device.cc:923] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-01-08 11:25:28.399332: I tensorflow/core/common_runtime/gpu/gpu_device.cc:929]      0 1 2 3 
+2019-01-08 11:25:28.399341: I tensorflow/core/common_runtime/gpu/gpu_device.cc:942] 0:   N Y Y Y 
+2019-01-08 11:25:28.399346: I tensorflow/core/common_runtime/gpu/gpu_device.cc:942] 1:   Y N Y Y 
+2019-01-08 11:25:28.399350: I tensorflow/core/common_runtime/gpu/gpu_device.cc:942] 2:   Y Y N Y 
+2019-01-08 11:25:28.399355: I tensorflow/core/common_runtime/gpu/gpu_device.cc:942] 3:   Y Y Y N 
+2019-01-08 11:25:28.400057: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1053] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 7543 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080, pci bus id: 0000:83:00.0, compute capability: 6.1)
+2019-01-08 11:25:28.401940: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1053] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 7543 MB memory) -> physical GPU (device: 1, name: GeForce GTX 1080, pci bus id: 0000:84:00.0, compute capability: 6.1)
+2019-01-08 11:25:28.403740: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1053] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:2 with 7543 MB memory) -> physical GPU (device: 2, name: GeForce GTX 1080, pci bus id: 0000:87:00.0, compute capability: 6.1)
+2019-01-08 11:25:28.405337: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1053] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:3 with 7543 MB memory) -> physical GPU (device: 3, name: GeForce GTX 1080, pci bus id: 0000:88:00.0, compute capability: 6.1)
